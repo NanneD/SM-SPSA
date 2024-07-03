@@ -16,13 +16,13 @@ For the user guide, including documentation and a quickstart, please see: https:
 
 If you would like to cite ``SM-SPSA``, please consider citing the following paper (note: more details will follow soon):
 > Nanne A. Dieleman, Joost Berkhout, Bernd Heidergott (2024).
-> A Pseudo-Gradient Approach for Model-free Markov Chain Optimization
+> A Pseudo-Gradient Approach for Model-free Markov Chain Optimization.
 > Available at:
 
 Or, using the following BibTeX entry:
 
 ```bibtex
-@article{Dieleman_Jagtenberg_2024,
+@article{Dieleman_Berkhout_Heidergott_2024,
 	title = {A Pseudo-Gradient Approach for Model-free Markov Chain Optimization},
 	author = {Dieleman, Nanne A. and Berkhout, Joost and Heidergott, Bernd},
 	year = {2024},
