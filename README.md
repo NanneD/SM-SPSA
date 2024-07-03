@@ -4,6 +4,8 @@
 
 SM-SPSA (stochastic matrix simultaneous perturbation stochastic approximation) is an extension of the [SPSA algorithm](https://www.jhuapl.edu/SPSA/) to optimize a nonlinear objective function over the stationary distribution of a Markov chain. For more information, please visit the SM-SPSA website: https://nanned.github.io/SM-SPSA.
 
+The code was built with Python 3.10.4.
+
 ## Installation
 
 For installation instructions, please see: https://nanned.github.io/SM-SPSA/installation/installation.html.
