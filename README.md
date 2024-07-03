@@ -10,7 +10,7 @@ For installation instructions, please see: https://nanned.github.io/SM-SPSA/inst
 
 ## Documentation
 
-For the user guide, including documentation and a quickstart, please see: https://nanned.github.io/SM-SPSA/user_guide/userguide.html.
+For the user guide, including documentation and a quickstart, please see: https://nanned.github.io/SM-SPSA/userguide/userguide.html.
 
 ## Citing
 
