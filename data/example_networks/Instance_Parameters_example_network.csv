@@ -1,0 +1,6 @@
+Instance_name,Random_M,Random_C,Seed,Problem_size,Objective_index
+example_network_0,Yes,Yes,100,9,7
+example_network_1,Yes,Yes,101,6,5
+example_network_2,Yes,Yes,102,7,1
+example_network_3,Yes,Yes,103,8,2
+example_network_4,Yes,Yes,104,9,7

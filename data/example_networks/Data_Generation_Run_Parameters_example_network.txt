@@ -1,0 +1,12 @@
+START_SEED_VALUE: 100
+INSTANCE_SIZE_RANGE: [5, 10]
+NR_INSTANCES: 5
+NETWORK_TYPE: networkx
+ALPHA: 0.9
+PROB: 0.2
+SAVE_OUTPUT: True
+INSTANCE_NAME: example_network
+DATA_FILE_NAME_M_MATRIX: M_matrix_example_network_
+DATA_FILE_NAME_C_MATRIX: C_matrix_example_network_
+INSTANCE_PARAMETERS_FILE_NAME: Instance_Parameters_example_network
+RUN_PARAMETERS_FILE_NAME: Data_Generation_Run_Parameters_example_network
