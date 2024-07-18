@@ -1,0 +1,6 @@
+﻿input\_output\_functions.check\_stochasticity\_input\_matrix
+============================================================
+
+.. currentmodule:: input_output_functions
+
+.. autofunction:: check_stochasticity_input_matrix

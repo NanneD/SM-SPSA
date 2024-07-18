@@ -1,0 +1,6 @@
+﻿plot\_functions.plot\_matrix
+============================
+
+.. currentmodule:: plot_functions
+
+.. autofunction:: plot_matrix

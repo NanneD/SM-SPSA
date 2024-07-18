@@ -1,0 +1,6 @@
+﻿algorithm\_functions.hyperlink\_cost\_function
+==============================================
+
+.. currentmodule:: algorithm_functions
+
+.. autofunction:: hyperlink_cost_function

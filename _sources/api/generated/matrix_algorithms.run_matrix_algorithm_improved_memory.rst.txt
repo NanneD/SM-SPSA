@@ -1,0 +1,6 @@
+﻿matrix\_algorithms.run\_matrix\_algorithm\_improved\_memory
+===========================================================
+
+.. currentmodule:: matrix_algorithms
+
+.. autofunction:: run_matrix_algorithm_improved_memory

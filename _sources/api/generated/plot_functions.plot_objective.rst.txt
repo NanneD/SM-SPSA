@@ -1,0 +1,6 @@
+﻿plot\_functions.plot\_objective
+===============================
+
+.. currentmodule:: plot_functions
+
+.. autofunction:: plot_objective
