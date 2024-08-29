@@ -1,0 +1,6 @@
+﻿algorithm\_functions.generate\_centred\_mass\_initial\_matrix
+=============================================================
+
+.. currentmodule:: algorithm_functions
+
+.. autofunction:: generate_centred_mass_initial_matrix

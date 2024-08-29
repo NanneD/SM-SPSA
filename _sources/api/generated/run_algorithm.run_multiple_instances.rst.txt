@@ -1,0 +1,6 @@
+﻿run\_algorithm.run\_multiple\_instances
+=======================================
+
+.. currentmodule:: run_algorithm
+
+.. autofunction:: run_multiple_instances

@@ -1,0 +1,614 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>main.py &#8212; SM-SPSA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/main';</script>
+    <link rel="shortcut icon" href="../_static/SMSPSA_favicon.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="matrix_algorithms.py" href="matrixalgorithms.html" />
+    <link rel="prev" title="input_output_functions.check_final_output" href="generated/input_output_functions.check_final_output.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/SMSPSA_logo.svg" class="logo__image only-light" alt="SM-SPSA - Home"/>
+    <script>document.write(`<img src="../_static/SMSPSA_logo.svg" class="logo__image only-dark" alt="SM-SPSA - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../installation/installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../userguide/userguide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item pst-header-nav-item current active">
+  <a class="nav-link nav-internal" href="api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../releases/releases.html">
+    Releases
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NanneD/SM-SPSA" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../installation/installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../userguide/userguide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item pst-header-nav-item current active">
+  <a class="nav-link nav-internal" href="api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../releases/releases.html">
+    Releases
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NanneD/SM-SPSA" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">SM-SPSA</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="algorithmfunctions.html">algorithm_functions.py</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/algorithm_functions.generate_centred_mass_initial_matrix.html">algorithm_functions.generate_centred_mass_initial_matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/algorithm_functions.hyperlink_cost_function.html">algorithm_functions.hyperlink_cost_function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/algorithm_functions.calculate_objective_value.html">algorithm_functions.calculate_objective_value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/algorithm_functions.stationary_distribution.html">algorithm_functions.stationary_distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/algorithm_functions.inverse_logistic_transformation_matrix.html">algorithm_functions.inverse_logistic_transformation_matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/algorithm_functions.logistic_transformation.html">algorithm_functions.logistic_transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/algorithm_functions.normalisation.html">algorithm_functions.normalisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/algorithm_functions.scale_matrix.html">algorithm_functions.scale_matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/algorithm_functions.logistic_simplex_transformation.html">algorithm_functions.logistic_simplex_transformation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="generatedatainstancesset.html">generate_data_instances_set.py</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inputoutputfunctionssmspsa.html">input_output_functions.py</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/input_output_functions.print_parameters.html">input_output_functions.print_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/input_output_functions.save_input_parameters.html">input_output_functions.save_input_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/input_output_functions.check_input_parameters.html">input_output_functions.check_input_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/input_output_functions.check_input_run_multiple_instances.html">input_output_functions.check_input_run_multiple_instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/input_output_functions.save_and_plot_results_memory_optimised.html">input_output_functions.save_and_plot_results_memory_optimised</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/input_output_functions.save_and_plot_results.html">input_output_functions.save_and_plot_results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/input_output_functions.check_stochasticity_input_matrix.html">input_output_functions.check_stochasticity_input_matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/input_output_functions.check_final_output.html">input_output_functions.check_final_output</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">main.py</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="matrixalgorithms.html">matrix_algorithms.py</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/matrix_algorithms.run_matrix_algorithm.html">matrix_algorithms.run_matrix_algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/matrix_algorithms.run_matrix_algorithm_improved_memory.html">matrix_algorithms.run_matrix_algorithm_improved_memory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="matrixSPSAalgorithm.html">matrix_SPSA_algorithm.py</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/matrix_SPSA_algorithm.calculate_numerator_SPSA.html">matrix_SPSA_algorithm.calculate_numerator_SPSA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/matrix_SPSA_algorithm.SPSA_gradient.html">matrix_SPSA_algorithm.SPSA_gradient</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="plotfunctions.html">plot_functions.py</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/plot_functions.plot_objective.html">plot_functions.plot_objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/plot_functions.plot_stat_dist.html">plot_functions.plot_stat_dist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/plot_functions.plot_matrix.html">plot_functions.plot_matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/plot_functions.plot_network.html">plot_functions.plot_network</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="runalgorithm.html">run_algorithm.py</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/run_algorithm.select_algorithm_run_type.html">run_algorithm.select_algorithm_run_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/run_algorithm.run_one_instance.html">run_algorithm.run_one_instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/run_algorithm.run_multiple_instances.html">run_algorithm.run_multiple_instances</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="api.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">main.py</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-main">
+<span id="main-py"></span><span id="mainapi"></span><h1>main.py<a class="headerlink" href="#module-main" title="Permalink to this heading">#</a></h1>
+<p>This is the main interface of the SM-SPSA algorithm.</p>
+<p>You can set all SM-SPSA parameters with this script and then run the
+algorithm. Below, all parameters are discussed. The input data section on the
+SM-SPSA website also contains more information on the required input data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>SEED_VALUE</strong> (<em>int</em>) – The seed value of the pseudo-random number generator for generating the
+random perturbations. It cannot be the same as <code class="docutils literal notranslate"><span class="pre">SEED_LAYOUT</span></code>.</p></li>
+<li><p><strong>SEED_LAYOUT</strong> (<em>int</em>) – The seed value for the layout of a network plot. It cannot be the same as
+<code class="docutils literal notranslate"><span class="pre">SEED_VALUE</span></code>.</p></li>
+<li><p><strong>CRN_GENERATOR</strong> (<em>str</em>) – The type of pseudo-random number generator that should be used. It should
+be either “Generator” for using NumPy’s default or “RandomState” for
+NumPy’s legacy generator.</p></li>
+<li><p><strong>MATRICES_DIRECTORY</strong> (<em>str</em>) – The folder, relative to the <code class="docutils literal notranslate"><span class="pre">ROOT_DIRECTORY</span></code> (automatically determined),
+where the input matrices are located.</p></li>
+<li><p><strong>OUTPUT_DIRECTORY</strong> (<em>str</em>) – The folder, relative to the <code class="docutils literal notranslate"><span class="pre">ROOT_DIRECTORY</span></code> (automatically determined),
+where the algorithm output should be saved if <code class="docutils literal notranslate"><span class="pre">SAVE_OUTPUT=True</span></code>.</p></li>
+<li><p><strong>ALGORITHM_RUN_TYPE</strong> (<em>str</em>) – Whether you want to run a single instance (“single”) or multiple instances
+(“multiple”) with the algorithm.</p></li>
+<li><p><strong>HEURISTIC_TYPE</strong> (<em>str</em>) – Either “no_heuristic” if you do not want to use an heuristic or
+“centred_mass” if you want to use the centred mass heuristic. This variable
+is also used to define <code class="docutils literal notranslate"><span class="pre">RUN_PARAMETERS_FILE_NAME</span></code>,
+<code class="docutils literal notranslate"><span class="pre">RUNNING_TIME_FILE_NAME</span></code> and <code class="docutils literal notranslate"><span class="pre">NETWORK_PLOT_FILE_NAME</span></code>.</p></li>
+<li><p><strong>INSTANCE_NAME</strong> (<em>str</em>) – The name of the network instance that you want to optimise. If
+<code class="docutils literal notranslate"><span class="pre">ALGORITHM_RUN_TYPE=&quot;multiple&quot;</span></code>, a suffix “_i” (where i is the instance
+number), is automatically added when reading the data. This to facilitate
+running the algorithm consecutively on multiple instances. Note that the
+actual filenames should contain this suffix. Thus, the first instance has
+suffix “_0”, the second “_1”, etc. This variable is also used to define
+<code class="docutils literal notranslate"><span class="pre">M_FILE_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">C_FILE_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">RUN_PARAMETERS_FILE_NAME</span></code>,
+<code class="docutils literal notranslate"><span class="pre">RUNNING_TIME_FILE_NAME</span></code> and <code class="docutils literal notranslate"><span class="pre">NETWORK_PLOT_FILE_NAME</span></code>.</p></li>
+<li><p><strong>M_FILE_NAME</strong> (<em>str</em>) – The name of the file that contains the initial transition matrix that is
+optimised. If <code class="docutils literal notranslate"><span class="pre">ALGORITHM_RUN_TYPE=&quot;multiple&quot;</span></code>, it should not contain
+the suffix “_i” (where i is the instance number), since this is
+automatically added when reading the data.</p></li>
+<li><p><strong>C_FILE_NAME</strong> (<em>str</em>) – The name of the file that contains the binary adjustment matrix containing
+0/1 indicating whether element [i,j] can be optimised (1) or not (0). If
+<code class="docutils literal notranslate"><span class="pre">ALGORITHM_RUN_TYPE=&quot;multiple&quot;</span></code>, it should not contain the suffix “_i”,
+(where i is the instance number) since this is automatically added when
+reading the data.</p></li>
+<li><p><strong>INSTANCE_PARAMETERS_FILE_NAME</strong> (<em>str | None</em>) – The name of the file that contains the instance parameter table if
+<code class="docutils literal notranslate"><span class="pre">ALGORITHM_RUN_TYPE=&quot;multiple&quot;</span></code>. Otherwise, it should be <code class="docutils literal notranslate"><span class="pre">None</span></code>. All
+networks that are present in this table will be optimised.</p></li>
+<li><p><strong>RUN_PARAMETERS_FILE_NAME</strong> (<em>str</em>) – The name of the file where the run parameters will be saved if
+<code class="docutils literal notranslate"><span class="pre">SAVE_OUTPUT=True</span></code>.</p></li>
+<li><p><strong>RUNNING_TIME_FILE_NAME</strong> (<em>str</em>) – The name of the file where the running times will be saved if
+<code class="docutils literal notranslate"><span class="pre">SAVE_OUTPUT=True</span></code>.</p></li>
+<li><p><strong>CENTRED_MASS_START</strong> (<em>bool</em>) – Whether the centred mass start is used (<code class="docutils literal notranslate"><span class="pre">True</span></code>) or not (<code class="docutils literal notranslate"><span class="pre">False</span></code>). It
+is automatically set based on the value of <code class="docutils literal notranslate"><span class="pre">HEURISTIC_TYPE</span></code>.</p></li>
+<li><p><strong>MAXIMISE_OBJECTIVE</strong> (<em>bool</em>) – Whether the objective should be maximised (<code class="docutils literal notranslate"><span class="pre">True</span></code>) or minimised
+(<code class="docutils literal notranslate"><span class="pre">False</span></code>).</p></li>
+<li><p><strong>GAME_TYPE</strong> (<em>str</em>) – The game type of the instance. Either “regular” (optimising a single node)
+or “hyperlink” (optimising a hyperlink objective function).</p></li>
+<li><p><strong>OBJECTIVE_INDICES</strong> (<em>list[int] | None</em>) – A list that contains the node that will be optimised if
+<code class="docutils literal notranslate"><span class="pre">ALGORITHM_RUN_TYPE=&quot;single&quot;</span></code>. Otherwise, it should be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>MEMORY_OPTIMISED</strong> (<em>bool</em>) – Whether the memory optimised version of the algorithm is used (<code class="docutils literal notranslate"><span class="pre">True</span></code>)
+or not (<code class="docutils literal notranslate"><span class="pre">False</span></code>). The main difference is that the output matrices are not
+stored for each iteration, instead only the matrices of the last iteration
+are stored. This version is especially useful for large networks.</p></li>
+<li><p><strong>DECR_NR_OBJ_EVAL</strong> (<em>bool</em>) – Whether the number of objective value evaluations should be decreased
+(<code class="docutils literal notranslate"><span class="pre">True</span></code>) or not (<code class="docutils literal notranslate"><span class="pre">False</span></code>). This option is only available if
+<code class="docutils literal notranslate"><span class="pre">MEMORY_OPTIMISED=True</span></code>.</p></li>
+<li><p><strong>OBJ_EVAL_ITERATION</strong> (<em>int | None</em>) – If <code class="docutils literal notranslate"><span class="pre">DECR_NR_OBJ_EVAL=True</span></code>, the objective value is calculated every
+<code class="docutils literal notranslate"><span class="pre">OBJ_EVAL_ITERATION``th</span> <span class="pre">iteration</span> <span class="pre">starting</span> <span class="pre">at</span> <span class="pre">iteration</span> <span class="pre">0.</span> <span class="pre">Otherwise,</span> <span class="pre">it</span>
+<span class="pre">should</span> <span class="pre">be</span> <span class="pre">``None</span></code>.</p></li>
+<li><p><strong>NR_ITERATIONS_TYPE</strong> (<em>str</em>) – Whether a fixed number of algoritihm iterations (“fixed”) or a variable
+number of iterations depending on the instance size (“variable”) should be
+used. If <code class="docutils literal notranslate"><span class="pre">NR_ITERATIONS_TYPE=&quot;variable&quot;</span></code>, the number of iterations is set
+to the size of the transition matrix squared times``NR_ITERATIONS_FACTOR``.
+If <code class="docutils literal notranslate"><span class="pre">ALGORITHM_RUN_TYPE=&quot;single&quot;</span></code>, only the “fixed” version can be used.</p></li>
+<li><p><strong>NR_ITERATIONS_FIXED</strong> (<em>int | None</em>) – If <code class="docutils literal notranslate"><span class="pre">NR_ITERATIONS_TYPE=&quot;fixed&quot;</span></code>, it specifies the number of algorithm
+iterations that are performed. Otherwise, it should be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>NR_ITERATIONS_FACTOR</strong> (<em>int | None</em>) – If <code class="docutils literal notranslate"><span class="pre">NR_ITERATIONS_TYPE=&quot;variable&quot;</span></code>, the number of iterations is set
+to the size of the transition matrix squared times``NR_ITERATIONS_FACTOR``.
+Otherwise, it should be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>EPSILON</strong> (<em>float</em>) – The value of the constant gain size.</p></li>
+<li><p><strong>INVERSE_ZERO</strong> (<em>float</em>) – If the initial transition matrix contains zeroes or ones, these values
+are replaced by <code class="docutils literal notranslate"><span class="pre">INVERSE_ZERO</span></code> and <code class="docutils literal notranslate"><span class="pre">1-INVERSE_ZERO</span></code>, respectively, to
+ensure numerical feasibility.</p></li>
+<li><p><strong>USE_TIME_LIMIT</strong> (<em>bool</em>) – Whether a time limit should be used (<code class="docutils literal notranslate"><span class="pre">True</span></code>) or not (<code class="docutils literal notranslate"><span class="pre">False</span></code>) for
+running the algorithm.</p></li>
+<li><p><strong>TIME_LIMIT_SEC</strong> (<em>float | None</em>) – If <code class="docutils literal notranslate"><span class="pre">USE_TIME_LIMIT=True</span></code>, it specifies the running time of the algorithm
+in seconds. Otherwise, it should be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>NETWORK_PLOT_FILE_NAME</strong> (<em>str</em>) – The name of the file where the network plots will be saved if
+<code class="docutils literal notranslate"><span class="pre">PlOT_NETWORK=True</span></code> and <code class="docutils literal notranslate"><span class="pre">SAVE_OUTPUT=True</span></code>. Note that a suffix
+“_start” and “_final” will be added for the network plot of the initial
+and the optimised transition matrix, respectively.</p></li>
+<li><p><strong>GRAPH_COLOURS</strong> (<em>list[str]</em>) – A list with the colours that are used for the network plot. The first
+colour is for edges that cannot be adjusted, the second for edges that can
+be adjusted.</p></li>
+<li><p><strong>COLOUR_MAP</strong> (<em>matplotlib.colors.LinearSegmentedColormap</em>) – The colour map that should be used to color the nodes of the network plot
+according to their stationary distribution value.</p></li>
+<li><p><strong>EDGE_FACTOR</strong> (<em>int</em>) – The factor with which the weights of the edges should be multiplied
+for determining the edge width of the network plot.</p></li>
+<li><p><strong>PLOT_NETWORK</strong> (<em>bool</em>) – Whether the network plots should be created (<code class="docutils literal notranslate"><span class="pre">True</span></code>) or not (<code class="docutils literal notranslate"><span class="pre">False</span></code>).
+A plot is created of the initial and the optimised network.</p></li>
+<li><p><strong>PLOT_MATRICES</strong> (<em>bool</em>) – Whether the various matrix plots should be created (<code class="docutils literal notranslate"><span class="pre">True</span></code>) or not
+(<code class="docutils literal notranslate"><span class="pre">False</span></code>). This option is only available if <code class="docutils literal notranslate"><span class="pre">MEMORY_OPTIMISED=False</span></code>.</p></li>
+<li><p><strong>PLOT_OBJECTIVE</strong> (<em>bool</em>) – Whether the objective value should be plotted (<code class="docutils literal notranslate"><span class="pre">True</span></code>) or not
+(<code class="docutils literal notranslate"><span class="pre">False</span></code>).</p></li>
+<li><p><strong>SAVE_OUTPUT</strong> (<em>bool</em>) – Whether the output should be saved (<code class="docutils literal notranslate"><span class="pre">True</span></code>) or not (<code class="docutils literal notranslate"><span class="pre">False</span></code>).</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

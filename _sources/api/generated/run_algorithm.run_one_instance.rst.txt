@@ -1,0 +1,6 @@
+﻿run\_algorithm.run\_one\_instance
+=================================
+
+.. currentmodule:: run_algorithm
+
+.. autofunction:: run_one_instance

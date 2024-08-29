@@ -1,0 +1,6 @@
+﻿algorithm\_functions.inverse\_logistic\_transformation\_matrix
+==============================================================
+
+.. currentmodule:: algorithm_functions
+
+.. autofunction:: inverse_logistic_transformation_matrix
