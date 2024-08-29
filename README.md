@@ -5,7 +5,7 @@
 
 SM-SPSA (stochastic matrix simultaneous perturbation stochastic approximation) is an extension of the [SPSA algorithm](https://www.jhuapl.edu/SPSA/) to optimize a nonlinear objective function over the stationary distribution of a Markov chain. For more information, please visit the SM-SPSA website: https://nanned.github.io/SM-SPSA.
 
-The code was built with Python 3.10.4.
+The code is written in Python 3.10.4.
 
 ## Installation
 
@@ -17,10 +17,10 @@ For the user guide, including documentation and a quickstart, please see: https:
 
 ## Citing
 
-If you would like to cite ``SM-SPSA``, please consider citing the following paper (note: more details will follow soon):
+If you would like to cite ``SM-SPSA``, please consider citing the following paper:
 > Nanne A. Dieleman, Joost Berkhout, Bernd Heidergott (2024).
 > A Pseudo-Gradient Approach for Model-free Markov Chain Optimization.
-> Available at:
+> Preprint at arXiv: https://www.arxiv.org/abs/2407.14786. doi: 10.48550/arXiv.2407.14786.
 
 Or, using the following BibTeX entry:
 
@@ -29,6 +29,8 @@ Or, using the following BibTeX entry:
 	title = {A Pseudo-Gradient Approach for Model-free Markov Chain Optimization},
 	author = {Dieleman, Nanne A. and Berkhout, Joost and Heidergott, Bernd},
 	year = {2024},
+        url = {https://www.arxiv.org/abs/2407.14786},
+        doi = {10.48550/arXiv.2407.14786},
 } 
 ```
 
@@ -38,4 +40,19 @@ The GNU General Public License v3 (GPL-3) license is used. For more information,
 
 ## Contributing
 
-If you would like to contribute to the package in any way, please feel free to create an issue and discuss what you would like to add or change.
+If you would like to contribute to ``SM-SPSA`` in any way, please feel free to create an [issue](https://github.com/NanneD/SM-SPSA/issues) to discuss what you would like to add or change. Moreover, make sure that your code submission includes:
+- tests
+- type hints
+- documentation
+- docstrings for the added/changed methods, classes, etc. according to the NumPy docstrings format
+
+To check whether the type hints and tests run smoothly, you can follow these steps:
+1. Open the command line and move to the ``SMSPSA`` folder.
+2. Run the tests by using the following command:
+```
+pytest smspsa/tests.py
+```
+3. Run the mypy checker by using:
+```
+mypy smspsa/
+```

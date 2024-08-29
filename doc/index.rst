@@ -6,10 +6,10 @@ SM-SPSA
 | **Release** |release|
 | **Date** |today|
 
-SM-SPSA (stochastic matrix simultaneous perturbation stochastic approximation) is an extension of the `SPSA algorithm  <https://www.jhuapl.edu/SPSA/>`_ to optimize a nonlinear objective function over the stationary distribution of a Markov chain. For more details on the SM-SPSA algorithm, please see the paper by Dieleman, Berkhout and Heidergott. 
+SM-SPSA (stochastic matrix simultaneous perturbation stochastic approximation) is an extension of the `SPSA algorithm  <https://www.jhuapl.edu/SPSA/>`_ to optimize a nonlinear objective function over the stationary distribution of a Markov chain. For more details on the SM-SPSA algorithm, please see the paper by `Dieleman, Berkhout and Heidergott <https://www.arxiv.org/abs/2407.14786>`_.
 
 | **Citing**
-| If you would like to cite this work, please see the README.md file on the `GitHub repository <https://github.com/NanneD/SM-SPSA>`_ for a suggested citation.
+| If you would like to cite this work, please see the README.md/CITATION.cff file on the `GitHub repository <https://github.com/NanneD/SM-SPSA>`_ for a suggested citation.
 
 | **License**
 | The GNU General Public License v3 (GPL-3) license is used. For more information, please see the `GitHub repository <https://github.com/NanneD/SM-SPSA>`_.

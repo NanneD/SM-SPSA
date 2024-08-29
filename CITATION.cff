@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Dieleman"
+    given-names: "Nanne A."
+    orcid: "https://orcid.org/0000-0002-2561-2674"
+  - family-names: "Berkhout"
+    given-names: "Joost"
+    orcid: "https://orcid.org/0000-0001-5883-9683"
+  - family-names: "Heidergott"
+    given-names: "Bernd"
+    orcid: "https://orcid.org/0000-0002-3389-2311"
+title: "SM-SPSA"
+url: "https://github.com/NanneD/SM-SPSA"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Dieleman"
+    given-names: "Nanne A."
+    orcid: "https://orcid.org/0000-0002-2561-2674"
+  - family-names: "Berkhout"
+    given-names: "Joost"
+    orcid: "https://orcid.org/0000-0001-5883-9683"
+  - family-names: "Heidergott"
+    given-names: "Bernd"
+    orcid: "https://orcid.org/0000-0002-3389-2311"
+  title: "A Pseudo-Gradient Approach for Model-free Markov Chain Optimization"
+  journal: "Preprint at arXiv"
+  year: 2024
+  doi: "10.48550/arXiv.2407.14786"
