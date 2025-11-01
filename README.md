@@ -18,9 +18,9 @@ For the user guide, including documentation and a quickstart, please see: https:
 ## Citing
 
 If you would like to cite ``SM-SPSA``, please consider citing the following paper:
-> Nanne A. Dieleman, Joost Berkhout, Bernd Heidergott (2024).
+> Nanne A. Dieleman, Joost Berkhout, Bernd Heidergott (2025).
 > A Pseudo-Gradient Approach for Model-free Markov Chain Optimization.
-> Preprint at arXiv: https://www.arxiv.org/abs/2407.14786. doi: 10.48550/arXiv.2407.14786.
+> Asia-Pacific Journal of Operational Research. doi: 10.1142/S0217595925500381.
 
 Or, using the following BibTeX entry:
 
@@ -28,9 +28,10 @@ Or, using the following BibTeX entry:
 @article{Dieleman_Berkhout_Heidergott_2024,
 	title = {A Pseudo-Gradient Approach for Model-free Markov Chain Optimization},
 	author = {Dieleman, Nanne A. and Berkhout, Joost and Heidergott, Bernd},
-	year = {2024},
-        url = {https://www.arxiv.org/abs/2407.14786},
-        doi = {10.48550/arXiv.2407.14786},
+	year = {2025},
+        url = {https://doi.org/10.1142/S0217595925500381},
+        journal = {Asia-Pacific Journal of Operational Research},
+        doi = {10.1142/S0217595925500381},
 } 
 ```
 
