@@ -1,0 +1,6 @@
+﻿algorithm\_functions.calculate\_objective\_value
+================================================
+
+.. currentmodule:: algorithm_functions
+
+.. autofunction:: calculate_objective_value

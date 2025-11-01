@@ -1,0 +1,6 @@
+﻿input\_output\_functions.save\_and\_plot\_results\_memory\_optimised
+====================================================================
+
+.. currentmodule:: input_output_functions
+
+.. autofunction:: save_and_plot_results_memory_optimised

@@ -1,0 +1,6 @@
+﻿run\_algorithm.select\_algorithm\_run\_type
+===========================================
+
+.. currentmodule:: run_algorithm
+
+.. autofunction:: select_algorithm_run_type

@@ -1,0 +1,6 @@
+﻿algorithm\_functions.scale\_matrix
+==================================
+
+.. currentmodule:: algorithm_functions
+
+.. autofunction:: scale_matrix

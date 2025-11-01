@@ -1,0 +1,6 @@
+﻿algorithm\_functions.logistic\_simplex\_transformation
+======================================================
+
+.. currentmodule:: algorithm_functions
+
+.. autofunction:: logistic_simplex_transformation

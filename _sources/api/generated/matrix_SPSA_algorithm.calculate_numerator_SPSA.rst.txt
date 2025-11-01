@@ -1,0 +1,6 @@
+﻿matrix\_SPSA\_algorithm.calculate\_numerator\_SPSA
+==================================================
+
+.. currentmodule:: matrix_SPSA_algorithm
+
+.. autofunction:: calculate_numerator_SPSA

@@ -1,0 +1,13 @@
+html[data-theme="light"] {
+    --pst-color-primary: #7f7f7f;
+    --pst-color-secondary: #1623b7;
+}
+
+html[data-theme="dark"] {
+    --pst-color-primary: #ffffff;
+    --pst-color-secondary: #b6bcff;
+}
+
+dl.field-list > dt:after {
+    content: "";
+}

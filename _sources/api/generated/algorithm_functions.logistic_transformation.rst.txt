@@ -1,0 +1,6 @@
+﻿algorithm\_functions.logistic\_transformation
+=============================================
+
+.. currentmodule:: algorithm_functions
+
+.. autofunction:: logistic_transformation

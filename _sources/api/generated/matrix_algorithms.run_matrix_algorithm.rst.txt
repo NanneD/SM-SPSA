@@ -1,0 +1,6 @@
+﻿matrix\_algorithms.run\_matrix\_algorithm
+=========================================
+
+.. currentmodule:: matrix_algorithms
+
+.. autofunction:: run_matrix_algorithm

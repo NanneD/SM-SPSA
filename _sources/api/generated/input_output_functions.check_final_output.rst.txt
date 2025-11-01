@@ -1,0 +1,6 @@
+﻿input\_output\_functions.check\_final\_output
+=============================================
+
+.. currentmodule:: input_output_functions
+
+.. autofunction:: check_final_output

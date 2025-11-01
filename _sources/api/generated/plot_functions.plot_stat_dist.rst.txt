@@ -1,0 +1,6 @@
+﻿plot\_functions.plot\_stat\_dist
+================================
+
+.. currentmodule:: plot_functions
+
+.. autofunction:: plot_stat_dist

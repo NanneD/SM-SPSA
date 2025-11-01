@@ -1,0 +1,6 @@
+﻿algorithm\_functions.stationary\_distribution
+=============================================
+
+.. currentmodule:: algorithm_functions
+
+.. autofunction:: stationary_distribution

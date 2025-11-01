@@ -1,0 +1,6 @@
+﻿algorithm\_functions.normalisation
+==================================
+
+.. currentmodule:: algorithm_functions
+
+.. autofunction:: normalisation
